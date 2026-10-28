@@ -61,3 +61,39 @@ python setup_db.py
 Notes
 
 This project uses synthetic sample data for learning and demonstration. Attendance percentages and trends are based on the generated dataset.
+
+SQL Optimization Techniques
+
+The Employee Attendance Analyzer uses the following SQL techniques to improve query readability, maintain data integrity, and support efficient analysis.
+
+1. Indexing
+
+Indexes can improve query performance when filtering, joining, or sorting attendance records. Indexes should be created on frequently queried columns, such as employee IDs and attendance dates, based on actual query usage.
+
+2. Common Table Expressions (CTEs)
+
+CTEs (WITH clauses) break complex queries into smaller, readable steps. They make attendance summaries and monthly trend calculations easier to maintain.
+
+3. Window Functions
+
+Window functions such as ROW_NUMBER(), RANK(), and LAG() support ranking employees, identifying consecutive absences, and analyzing attendance patterns without losing row-level detail.
+
+4. Joins
+
+Joins combine employee, department, and attendance data using their related keys, allowing meaningful reports without unnecessarily duplicating data.
+
+5. CASE Expressions
+
+CASE expressions classify attendance records, such as identifying late arrivals or categorizing attendance statuses, directly within SQL queries.
+
+6. Query Filtering and Aggregation
+
+WHERE, GROUP BY, and aggregate functions such as COUNT() and AVG() help filter records and calculate attendance percentages, working hours, and monthly statistics.
+
+7. Data Integrity
+
+Primary keys, foreign keys, unique constraints, and check constraints help prevent invalid or inconsistent data from entering the database.
+
+8. Performance Validation
+
+Indexes and query performance should be evaluated using representative data and SQLite’s EXPLAIN QUERY PLAN. Indexes should be retained when they improve relevant queries without adding unnecessary write overhead.
